@@ -9,8 +9,18 @@
 <body>
     <div class="container">
         <h1>HSK 1 Words</h1>
+        
+        <div>
+            <label for="minutes">Enter the number of minutes (up to 10 minutes):</label>
+            <input type="number" id="minutes" min="1" max="10" value="10">
+            <button id="startTimer">Start</button>
+        </div>
+        
         <ul id="word-list">
             </ul>
+        <div id="timer">--:--</div>
+            <audio id="timeoutSound" src="timeout.mp3"></audio>
+        
     <h3>By SOUFYANE HAMIMED, Algerian Student</h3>
      <h3>Nanjing Polytechnic Institute, Nanjing, China</h3>
     <h3>تم برمجته بواسطة سفيان حميمد</h3>
