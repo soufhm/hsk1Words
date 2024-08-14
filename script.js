@@ -209,7 +209,7 @@ let timerInterval; // لتخزين معرّف فترة زمنية لتشغيل �
 function startTimer() {
   const minutes = parseInt(minutesInput.value);
   if (isNaN(minutes) || minutes < 1 || minutes > 10) {
-    alert('يرجى إدخال رقم بين 1 و 10.');
+    alert('Please enter a number between 1 and 10.');
     return;
   }
 
