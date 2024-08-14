@@ -190,3 +190,46 @@ wordElements.forEach(word => {
     }, 1000); // نخفي البينيين بعد ثانية واحدة (1000 ميلي ثانية)
   });
 });
+
+
+// ... أكواد JavaScript  السابقة ...
+
+
+
+
+
+const timerElement = document.getElementById('timer');
+const minutesInput = document.getElementById('minutes');
+const startButton = document.getElementById('startTimer');
+const timeoutSound = document.getElementById('timeoutSound');
+
+let startTime; // لتخزين الوقت المتبقي
+let timerInterval; // لتخزين معرّف فترة زمنية لتشغيل المؤقت
+
+function startTimer() {
+  const minutes = parseInt(minutesInput.value);
+  if (isNaN(minutes) || minutes < 1 || minutes > 10) {
+    alert('يرجى إدخال رقم بين 1 و 10.');
+    return;
+  }
+
+  startTime = minutes * 60; 
+  timerElement.innerText = `${minutes.toString().padStart(2, '0')}:00`;
+
+  timerInterval = setInterval(updateTimer, 1000); 
+}
+
+function updateTimer() {
+  if (startTime > 0) {
+    const minutes = Math.floor(startTime / 60);
+    const seconds = startTime % 60;
+    timerElement.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    startTime--;
+  } else {
+    clearInterval(timerInterval);
+    timerElement.innerText = "Stop, time is up!"; 
+    timeoutSound.play(); 
+  }
+}
+
+startButton.addEventListener('click', startTimer);
