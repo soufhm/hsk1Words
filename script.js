@@ -154,11 +154,11 @@ const words = [
 
 const wordList = document.getElementById("word-list");
 
-words.forEach(word => {
+words.forEach((word, index) => { 
   const listItem = document.createElement("li");
   //  إضافة عنصر  <audio>   لتشغيل الصوت  
   listItem.innerHTML = `
-    <span class="chinese">${word.chinese}</span>
+    <span class="word-number">${index + 1}. </span> <span class="chinese">${word.chinese}</span>
     <span class="pinyin">${word.pinyin}</span>
     <audio src="${word.audio}"></audio> 
   `;
