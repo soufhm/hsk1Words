@@ -18,6 +18,15 @@
   border-radius: 5px;
   min-width: 80px;
   cursor: pointer; 
+  position: relative; /*  إضافة هذه الخاصية  */
+}
+
+.word-number {
+  position: absolute; /*  إضافة هذه الخاصية  */
+  top: 70%; /*  ضبط موضع الترقيم  */
+  left: 5px; /*  ضبط موضع الترقيم  */
+  font-size: 7px; /*  ضبط حجم الترقيم  */
+  color: #555; /*  لون الترقيم  */
 }
 
 .pinyin {
