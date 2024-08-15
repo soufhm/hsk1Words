@@ -18,33 +18,58 @@
   border-radius: 5px;
   min-width: 80px;
   cursor: pointer; 
-  position: relative; /*  إضافة هذه الخاصية  */
+  position: relative; 
 }
 
 .word-number {
-  position: absolute; /*  إضافة هذه الخاصية  */
-  top: 70%; /*  ضبط موضع الترقيم  */
-  left: 5px; /*  ضبط موضع الترقيم  */
-  font-size: 7px; /*  ضبط حجم الترقيم  */
-  color: #555; /*  لون الترقيم  */
+  position: absolute; 
+  top: 70%;
+  left: 5px;
+  font-size: 7px; 
+  color: #555; 
 }
 
 .pinyin {
-  display: none; /* نخفي البينيين في البداية */
+  display: none; 
   font-size: 14px;
   color: #555;
 }
 
 .pinyin.show {
-  display: inline; /* نعرض البينيين عند النقر */
+  display: inline; 
 }
 
 #timer {
-  position: fixed; /* لتثبيت المؤقت على اليسار */
+  position: fixed; 
   top: 20px;
   left: 20px;
   padding: 10px;
   background-color: #f0f0f0;
   border-radius: 5px;
   font-size: 18px;
+}
+
+/*  التصميم المُعدّل لحقل الإدخال  */
+input[type="number"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 10px; /*  مسافة بين حقل الإدخال والزر  */
+  text-align: center; 
+}
+
+/*  التصميم المُعدّل لزر  "start"  */
+#startTimer {
+  padding: 8px 15px;
+  background-color: #eca706; /*  لون زر "start"  */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#startTimer:hover {
+  background-color: #a84405; /*  لون الزر عند تمرير الماوس عليه  */
 }
