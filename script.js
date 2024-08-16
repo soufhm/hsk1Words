@@ -196,8 +196,6 @@ wordElements.forEach(word => {
 
 
 
-
-
 const timerElement = document.getElementById('timer');
 const minutesInput = document.getElementById('minutes');
 const startButton = document.getElementById('startTimer');
@@ -233,6 +231,8 @@ function updateTimer() {
 }
 
 startButton.addEventListener('click', startTimer);
+
+
 
 // ... بقية الكود JavaScript ...
 
