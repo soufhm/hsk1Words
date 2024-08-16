@@ -234,6 +234,8 @@ function updateTimer() {
 
 startButton.addEventListener('click', startTimer);
 
+// ... بقية الكود JavaScript ...
+
 const showPinyinButton = document.getElementById('showPinyin');
 
 // دالة لإظهار/إخفاء البينيين وتغيير نص الزر 
