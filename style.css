@@ -73,3 +73,20 @@ input[type="number"] {
 #startTimer:hover {
   background-color: #a84405; /*  لون الزر عند تمرير الماوس عليه  */
 }
+
+#showPinyin {
+  padding: 8px 15px;
+  background-color: #eca706; /* لون الزر */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed; 
+  right: 20px;
+  top: 25px;
+}
+
+#showPinyin:hover {
+  background-color: #a84405; /* لون الزر عند تمرير الماوس عليه */
+}
