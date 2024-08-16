@@ -233,3 +233,23 @@ function updateTimer() {
 }
 
 startButton.addEventListener('click', startTimer);
+
+const showPinyinButton = document.getElementById('showPinyin');
+
+// دالة لإظهار/إخفاء البينيين وتغيير نص الزر 
+function togglePinyin() {
+  const pinyinElements = document.querySelectorAll('.pinyin');
+  pinyinElements.forEach(pinyin => {
+    pinyin.classList.toggle('show');
+  });
+
+  //  تغيير نص الزر 
+  if (showPinyinButton.innerText === 'Show Pinyin') {
+    showPinyinButton.innerText = 'Hide Pinyin';
+  } else {
+    showPinyinButton.innerText = 'Show Pinyin';
+  }
+}
+
+// أضف حدث النقر للزر
+showPinyinButton.addEventListener('click', togglePinyin);
