@@ -256,6 +256,7 @@ function togglePinyin() {
 // أضف حدث النقر للزر
 showPinyinButton.addEventListener('click', togglePinyin);
 
+
 // ...  كود  JavaScript  السابق  ...
 
 // دالة لخلط الكلمات عشوائيًا
@@ -287,5 +288,3 @@ function shuffleWords() {
 
 const shuffleButton = document.getElementById('shuffleButton');
 shuffleButton.addEventListener('click', shuffleWords);
-
-
