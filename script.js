@@ -255,3 +255,37 @@ function togglePinyin() {
 
 // أضف حدث النقر للزر
 showPinyinButton.addEventListener('click', togglePinyin);
+
+// ...  كود  JavaScript  السابق  ...
+
+// دالة لخلط الكلمات عشوائيًا
+function shuffleWords() {
+  for (let i = words.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [words[i], words[j]] = [words[j], words[i]]; 
+  }
+
+  //  إعادة إنشاء  word-list 
+  wordList.innerHTML = ''; 
+  words.forEach((word, index) => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+      <span class="word-number">${index + 1}. </span> <span class="chinese">${word.chinese}</span>
+      <span class="pinyin">${word.pinyin}</span>
+      <audio src="${word.audio}"></audio> 
+    `;
+    listItem.addEventListener('click', () => {
+      const pinyinSpan = listItem.querySelector('.pinyin');
+      pinyinSpan.classList.toggle('show');
+      const audio = listItem.querySelector('audio');
+      audio.currentTime = 0;
+      audio.play(); 
+    });
+    wordList.appendChild(listItem);
+  });
+}
+
+const shuffleButton = document.getElementById('shuffleButton');
+shuffleButton.addEventListener('click', shuffleWords);
+
+
