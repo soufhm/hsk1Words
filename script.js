@@ -152,11 +152,16 @@ const words = [
   { chinese: "没关系", pinyin: "méiguānxi", arabic: "لا بأس", image: "meiguanxi.jpg", audio: "audio/meiguanxi.mp3" }
 ];
 
+
 const wordList = document.getElementById("word-list");
+const translationContainer = document.createElement("div"); 
+translationContainer.id = "translation"; 
+translationContainer.style.display = "none"; 
+
+document.body.appendChild(translationContainer); 
 
 words.forEach((word, index) => { 
   const listItem = document.createElement("li");
-  //  إضافة عنصر  <audio>   لتشغيل الصوت  
   listItem.innerHTML = `
     <span class="word-number">${index + 1}. </span> <span class="chinese">${word.chinese}</span>
     <span class="pinyin">${word.pinyin}</span>
@@ -169,8 +174,14 @@ words.forEach((word, index) => {
 
     // تشغيل الصوت عند النقر على الكلمة
     const audio = listItem.querySelector('audio');
-    audio.currentTime = 0; // إعادة تشغيل الصوت من البداية
+    audio.currentTime = 0; 
     audio.play(); 
+
+    // عرض الترجمة في العنصر الجديد
+    const selectedWord = listItem.querySelector('.chinese').textContent;
+    const translation = words.find(w => w.chinese === selectedWord).arabic;
+    translationContainer.innerText = `ترجمة الكلمة: ${translation}`; 
+    translationContainer.style.display = "block"; 
   });
 
   wordList.appendChild(listItem);
@@ -191,18 +202,15 @@ wordElements.forEach(word => {
   });
 });
 
-
-// ... أكواد JavaScript  السابقة ...
-
-
+// كود المؤقت
 
 const timerElement = document.getElementById('timer');
 const minutesInput = document.getElementById('minutes');
 const startButton = document.getElementById('startTimer');
 const timeoutSound = document.getElementById('timeoutSound');
 
-let startTime; // لتخزين الوقت المتبقي
-let timerInterval; // لتخزين معرّف فترة زمنية لتشغيل المؤقت
+let startTime; 
+let timerInterval; 
 
 function startTimer() {
   const minutes = parseInt(minutesInput.value);
@@ -232,9 +240,7 @@ function updateTimer() {
 
 startButton.addEventListener('click', startTimer);
 
-
-
-// ... بقية الكود JavaScript ...
+// كود إظهار/إخفاء pinyin 
 
 const showPinyinButton = document.getElementById('showPinyin');
 
