@@ -178,10 +178,10 @@ words.forEach((word, index) => {
     audio.play(); 
 
     // عرض الترجمة في العنصر الجديد
-    const selectedWord = listItem.querySelector('.chinese').textContent;
-    const translation = words.find(w => w.chinese === selectedWord).arabic;
-    translationContainer.innerText = `ترجمة الكلمة: ${translation}`; 
-    translationContainer.style.display = "block"; 
+   // const selectedWord = listItem.querySelector('.chinese').textContent;
+  //   const translation = words.find(w => w.chinese === selectedWord).arabic;
+  //   translationContainer.innerText = `ترجمة الكلمة: ${translation}`; 
+  //   translationContainer.style.display = "block"; 
   });
 
   wordList.appendChild(listItem);
